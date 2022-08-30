@@ -57,18 +57,18 @@ function buildToDo(todo, index) {
   toDoShell.className = "toDoShell";
   const toDoText = document.createElement("span");
   toDoText.innerHTML = todo.description;
-  //toDoText.id = index;
+  toDoText.id = index;
   if (todo.complete) {
     toDoText.className = "completeText";
-    checkbox.checked = true;
+    //checkbox.checked = true;
   }
-  const checkbox = document.createElement("input");
-  checkbox.id = index;
-  checkbox.addEventListener("click", completeToDo);
-  checkbox.className = "completeCheckbox";
+  // const checkbox = document.createElement("input");
+  // checkbox.id = index;
+  // checkbox.addEventListener("click", completeToDo);
+  // checkbox.className = "completeCheckbox";
+  //toDoItems.appendChild(checkbox);
   toDoShell.appendChild(toDoText);
-  toDoItems.appendChild(checkbox);
-  //toDoText.addEventListener("click", completeToDo);
+  toDoText.addEventListener("click", completeToDo);
   return toDoShell;
 }
 
@@ -96,8 +96,10 @@ function displayToDos() {
   const toDoContainer = document.getElementById("toDoContainer");
   toDoContainer.innerHTML = "";
   let arr = buildToDos(toDoItems);
-  for (let i = 0; i < arr.length; i++) {
-    toDoContainer.appendChild(arr[i]);
+  if (arr.length > 0) {
+    for (let i = 0; i < arr.length; i++) {
+      toDoContainer.appendChild(arr[i]);
+    }
   }
 }
 
@@ -116,6 +118,7 @@ function addToDo() {
   const obj = new ToDo(input.value);
   toDoItems.push(obj);
   input.value = "";
+  displayToDos();
 }
 
 // Agregar un 'Event Listener' para que cada vez que el botón 'AGREGAR' sea clickeado
