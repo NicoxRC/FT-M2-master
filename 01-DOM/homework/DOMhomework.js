@@ -57,10 +57,18 @@ function buildToDo(todo, index) {
   toDoShell.className = "toDoShell";
   const toDoText = document.createElement("span");
   toDoText.innerHTML = todo.description;
-  toDoText.id = index;
-  if (todo.complete) toDoText.className = "completeText";
+  //toDoText.id = index;
+  if (todo.complete) {
+    toDoText.className = "completeText";
+    checkbox.checked = true;
+  }
+  const checkbox = document.createElement("input");
+  checkbox.id = index;
+  checkbox.addEventListener("click", completeToDo);
+  checkbox.className = "completeCheckbox";
   toDoShell.appendChild(toDoText);
-  toDoText.addEventListener("click", completeToDo);
+  toDoItems.appendChild(checkbox);
+  //toDoText.addEventListener("click", completeToDo);
   return toDoShell;
 }
 
