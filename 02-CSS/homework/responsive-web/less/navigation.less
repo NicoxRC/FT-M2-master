@@ -1,5 +1,22 @@
 // Código de Nav acá
 nav {
-  padding: 10px;
-  background-color: @wild-sand;
+  .flexNav(@direction: column);
+  padding: 20px;
+  background-color: @nav-bg;
+  border: @nav-border solid 1px;
+  margin-bottom: 8px;
+  h2 {
+    font-weight: bold;
+  }
+  ul {
+    .flexNav(@justify: space-around);
+    width: 30%;
+    padding-top: 40px;
+  }
+  a {
+    text-decoration: none;
+    color: @river-bend;
+    font-size: 20px;
+    font-weight: bold;
+  }
 }

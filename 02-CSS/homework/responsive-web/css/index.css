@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -134,7 +134,7 @@ html {
 }
 html,
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   color: #5e6164;
 }
 h1,
@@ -142,7 +142,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
   color: #23293b;
 }
 h2 {
@@ -161,11 +161,34 @@ p {
   margin: 0 auto;
 }
 nav {
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   background-color: #f6f6f6;
+  border: #f1f1f1 solid 1px;
+  margin-bottom: 8px;
+}
+nav h2 {
+  font-weight: bold;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+  padding-top: 40px;
+}
+nav a {
+  text-decoration: none;
+  color: #454a59;
+  font-size: 20px;
+  font-weight: bold;
 }
 footer {
-  color: #22283B;
+  color: #22283b;
   background: #f4f4f4;
   padding: 20px 0;
   border: 1px double #e0e0e0;
@@ -179,6 +202,9 @@ footer {
 }
 .home .intro p {
   padding: 0 15px;
+}
+.home .intro img {
+  border-radius: 20px;
 }
 .home .music-images {
   display: flex;
@@ -215,6 +241,19 @@ footer {
 }
 .home .actual .actual-text p {
   margin-bottom: 26px;
+}
+.home .actual .actual-text .btn {
+  display: inline-block;
+  background-color: #22283a;
+  color: #f1f1f1;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background-color 0.5s;
+}
+.home .actual .actual-text .btn:hover {
+  background-color: red;
+  color: black;
 }
 .home .actual .actual-img {
   width: 46%;
