@@ -178,7 +178,7 @@ nav ul {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 30%;
+  width: 50%;
   padding-top: 40px;
 }
 nav a {

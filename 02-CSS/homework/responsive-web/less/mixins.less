@@ -1,22 +1,22 @@
 // Mixins acá
-.flexNav(@direction:row, @justify:center, @align:center) {
+.flexNav(@direction @justify @align) {
   display: flex;
   flex-direction: @direction;
   justify-content: @justify;
   align-items: @align;
 }
-.imgBorder(){
+.imgBorder() {
   border-radius: 20px;
 }
-.myBtn(@fount_color, @background){
+.myBtn(@fount_color, @background) {
   display: inline-block;
   background-color: @background;
   color: @fount_color;
   font-size: 15px;
   border-radius: 5px;
   padding: 10px;
-  transition: background-color .5s;
-  &:hover{
+  transition: background-color 0.5s;
+  &:hover {
     background-color: @back;
     color: @colorsito;
   }
