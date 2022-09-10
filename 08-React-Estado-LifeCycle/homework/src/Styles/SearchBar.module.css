@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.btn {
+  color: rgb(2, 149, 2);
+  border: 1px solid rgb(2, 149, 2);
+  border-radius: 10%;
+  padding: 5px 8px;
+  margin-left: 5px;
+}
+.btn:hover {
+  background-color: rgb(2, 149, 2);
+  border: 1px solid black;
+  color: black;
+}

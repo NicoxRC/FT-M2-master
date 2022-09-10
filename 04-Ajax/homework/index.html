@@ -4,22 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+    ul {
+      list-style-type: none;
+    }
+  </style>
 
   <title>HomeWork Ajax</title>
 </head>
 <body>
+  <h2>Mis amigos!</h2>
   <button id='boton'>Ver Amigos</button>
-  <ul id='lista'>
-  </ul>
+  <ul className = 'text' id='lista'></ul>
 
-  <h2>Ver Amigos</h2>
-  <img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif' />
-  <hr>
+ <hr>
+ <h2>Ver amigos!</h2>
   <input id='input'></input>
   <button id='search'>Buscar</button>
   <span id='amigo'></span>
 
   <hr>
+  <h2>Eliminar amigos!</h2>
   <input id='inputDelete'></input>
   <button id='delete'>Delete</button>
   <span id='success'></span>

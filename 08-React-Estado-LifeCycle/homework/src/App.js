@@ -1,11 +1,13 @@
 import React from 'react';
+import Cards from './components/Cards';
+import Nav from './components/Nav';
 import './App.css';
 
 export default function App() {
   return (
     <div className="App">
-      { /* Tu código acá: */ }
-      <h1>Título</h1>
+      { /* Tu código acá: */}
+      <Nav />
     </div>
   );
 }
