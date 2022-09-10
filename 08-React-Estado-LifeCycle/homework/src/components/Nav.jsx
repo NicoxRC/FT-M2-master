@@ -6,9 +6,9 @@ import s from "../Styles/Nav.module.css";
 export default function Nav({ onSearch }) {
   return (
     <div className={s.container}>
-      <img className={s.logoHenry} src={Logo} alt="HenryLogo" />
+      <img src={Logo} alt="HenryLogo" />
       <h3>Henry - Weather App</h3>
-      <SearchBar />
+      <SearchBar className={s.bar}/>
     </div>
   );
 }
