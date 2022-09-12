@@ -6,21 +6,21 @@
   right: 0;
 }
 .btn {
-  color: rgb(2, 149, 2);
+  color: rgb(3, 176, 3);
   background-color: transparent;
-  border: 1px solid rgb(2, 149, 2);
+  border: 1px solid rgb(3, 176, 3);
   border-radius: 10%;
-  /* padding: 5px 8px; */
+  padding: 3px 8px;
   margin-left: 5px;
+  margin-right: 20px;
 }
 .btn:hover {
-  background-color: rgb(2, 149, 2);
-  border: 1px solid black;
-  color: black;
+  background-color: rgb(1, 205, 1);
+  color: white;
 }
-.container input::placeholder {
-  background-color: green;
-  border-radius: 2px;
-  padding: 0;
+.input {
+  border-radius: 5px;
+  border: 0;
+  padding: 7px 10px;
+  outline: none;
 }
-
