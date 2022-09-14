@@ -8,7 +8,7 @@ export default function Nav({ onSearch }) {
     <div className={s.container}>
       <img src={Logo} alt="HenryLogo" />
       <h3>Henry - Weather App</h3>
-      <SearchBar className={s.bar}/>
+      <SearchBar className={s.bar} onSearch={onSearch} />
     </div>
   );
 }

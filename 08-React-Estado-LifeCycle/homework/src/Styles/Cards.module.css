@@ -2,3 +2,9 @@
   display: flex;
   align-content: space-around;
 }
+.cards {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
