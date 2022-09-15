@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+}
+.btn {
+  color: rgb(3, 176, 3);
+  background-color: transparent;
+  border: 1px solid rgb(3, 176, 3);
+  border-radius: 10%;
+  padding: 3px 8px;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+.btn:hover {
+  background-color: rgb(3, 176, 3);
+  color: white;
+}
+.input {
+  border-radius: 5px;
+  border: 0;
+  padding: 7px 10px;
+  outline: none;
+}

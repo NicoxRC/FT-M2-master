@@ -1,21 +1,24 @@
-import React from 'react';
-import Logo from '../img/logoHenry.png'
-import SearchBar from './SearchBar.jsx';
-import './Nav.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
+import Logo from "../img/logoHenry.png";
+import s from "../Styles/Nav.module.css";
 
-
-function Nav({onSearch}) {
+export default function Nav({ onSearch }) {
   return (
-    <nav className="navbar navbar-dark bg-dark">
-        <span className="navbar-brand">
-          <img id="logoHenry" src={Logo} width="30" height="30" className="d-inline-block align-top" alt="" />
-          Henry - Weather App
+    <nav className={s.container}>
+      <Link to="/">
+        <span className={s.spanContainer}>
+          <img src={Logo} alt="HenryLogo" />
+          <h3>Henry - Weather App</h3>
         </span>
-        <SearchBar
-          onSearch={onSearch}
-        />
+      </Link>
+      <Link to="/about">
+        <span className={s.spanContainer}>
+          <h3>About</h3>
+        </span>
+      </Link>
+      <SearchBar className={s.bar} onSearch={onSearch} />
     </nav>
   );
-};
-
-export default Nav;
+}

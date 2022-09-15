@@ -1,61 +1,64 @@
 import React, { useState } from 'react';
-
+import { Route, Routes } from 'react-router-dom';
+import Cards from '../components/Cards';
+import Nav from '../components/Nav';
+import About from "../components/About";
+import Ciudad from '../components/Ciudad';
 import './App.css';
-import Nav from '../components/Nav.jsx';
-import Cards from '../components/Cards.jsx';
 
-const apiKey = 'Aqui va la API key que creaste';
+const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
 
-function App() {
+export default function App() {
+
   const [cities, setCities] = useState([]);
+
+  function onSearch(city) {
+
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+      .then(r => r.json())
+      .then(response_json => {
+        if (response_json.main !== undefined) {
+          const city = {
+            min: Math.round(response_json.main.temp_min),
+            max: Math.round(response_json.main.temp_max),
+            name: response_json.name,
+            id: response_json.id,
+            img: response_json.weather[0].icon
+          };
+          setCities(oldCities => [...oldCities, city]);
+        } else {
+          alert('City not found.')
+        }
+      })
+  };
+
   function onClose(id) {
     setCities(oldCities => oldCities.filter(c => c.id !== id));
   }
-  function onSearch(ciudad) {
-    //Llamado a la API del clima
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`)
-      .then(r => r.json())
-      .then((recurso) => {
-        if(recurso.main !== undefined){
-          const ciudad = {
-            min: Math.round(recurso.main.temp_min),
-            max: Math.round(recurso.main.temp_max),
-            img: recurso.weather[0].icon,
-            id: recurso.id,
-            wind: recurso.wind.speed,
-            temp: recurso.main.temp,
-            name: recurso.name,
-            weather: recurso.weather[0].main,
-            clouds: recurso.clouds.all,
-            latitud: recurso.coord.lat,
-            longitud: recurso.coord.lon
-          };
-          setCities(oldCities => [...oldCities, ciudad]);
-        } else {
-          alert("Ciudad no encontrada");
-        }
-      });
-  }
+
   function onFilter(ciudadId) {
     let ciudad = cities.filter(c => c.id === parseInt(ciudadId));
-    if(ciudad.length > 0) {
-        return ciudad[0];
+    if (ciudad.length > 0) {
+      return ciudad[0];
     } else {
-        return null;
+      return null;
     }
   }
+
   return (
-    <div className="App">
-      <Nav onSearch={onSearch}/>
-      <div>
-        <Cards
-          cities={cities}
-          onClose={onClose}
+    <div className='App'>
+      <Nav onSearch={onSearch} />
+      <Routes>
+        {/* <Route path='/' render={() => <Nav onSearch={onSearch} />} /> */}
+        <Route
+          path='/about'
+          element={<About />}
         />
-      </div>
-      <hr />
+        <Route path='/ciudad/:ciudadId'
+          element={<Ciudad onFilter={onFilter} />} />
+
+        <Route exact path='/' element={<Cards cities={cities} onClose={onClose} />} />
+      </Routes>
     </div>
   );
 }
-
-export default App;

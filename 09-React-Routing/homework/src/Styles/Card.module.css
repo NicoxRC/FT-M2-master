@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 200px;
+  align-content: center;
+  border: 1px solid rgb(212, 210, 210);
+  border-radius: 2%;
+  padding: 5px;
+  margin: 50px;
+}
+.card h4 {
+  font-weight: bold;
+  padding-bottom: 20px;
+  margin: 0;
+}
+.btn {
+  color: white;
+  background-color: red;
+  width: 28px;
+  height: 100%;
+  border: none;
+  border-radius: 10%;
+  margin: 5px;
+  align-self: flex-end;
+}
+.btn:hover {
+  background-color: black;
+  color: red;
+}
+.middleDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.middleDiv p {
+  font-weight: bold;
+}
