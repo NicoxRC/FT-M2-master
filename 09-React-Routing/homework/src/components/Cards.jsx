@@ -3,7 +3,6 @@ import Card from "./Card";
 import s from "../Styles/Cards.module.css";
 
 export default function Cards({ cities, onClose }) {
-  if (cities) {
     return (
       <div className={s.container}>
         <ul className={s.cards}>
@@ -22,5 +21,4 @@ export default function Cards({ cities, onClose }) {
         </ul>
       </div>
     );
-  }
 }

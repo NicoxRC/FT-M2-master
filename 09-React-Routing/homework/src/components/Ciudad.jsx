@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 export default function Ciudad({ onFilter }) {
-  let ciudadId = useParams();
+  let {ciudadId} = useParams();
   let city = onFilter(ciudadId);
   return (
     <div className="ciudad">

@@ -23,7 +23,13 @@ export default function App() {
             max: Math.round(response_json.main.temp_max),
             name: response_json.name,
             id: response_json.id,
-            img: response_json.weather[0].icon
+            img: response_json.weather[0].icon,
+            wind: response_json.wind.speed,
+            temp: response_json.main.temp,
+            weather: response_json.weather[0].main,
+            clouds: response_json.clouds.all,
+            latitud: response_json.coord.lat,
+            longitud: response_json.coord.lon,
           };
           setCities(oldCities => [...oldCities, city]);
         } else {
